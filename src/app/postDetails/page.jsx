@@ -41,7 +41,7 @@ export default function PostDetails() {
     }, [url]);
     
 
-    if (data !== undefined) {
+    // if (data !== undefined) {
         const addComment = (comment) => {
             setComments([comment, ...comments]);
         };
@@ -50,11 +50,10 @@ export default function PostDetails() {
         return (
             <>
                 <IconButton onClick={() => router.back()}><ArrowBackIosNewIcon /></IconButton>
-
                 <main className={styles.container}>
                     <div className={styles.user}>
-                        <Avatar className={styles.avatar}>{data.post.user.icon_path}</Avatar>
-                        <Typography className={styles.username}>{data.post.user.name}</Typography>
+                        <Avatar className={styles.avatar}>K</Avatar>
+                        <Typography className={styles.username}>keita</Typography>
                     </div>
 
 
@@ -74,6 +73,7 @@ export default function PostDetails() {
                                 ) */}
 
                     {/* </Swiper> */}
+                    
 
                     <div className={styles.postinfo}>
                         <div className={styles.goodbutton}>
@@ -81,11 +81,14 @@ export default function PostDetails() {
                             <LikeButton onClick={() => setLikesCounts(likesCounts + 1)}/>
                             <div className="{styles.likes}"  style={{color: '#6da7e7', fontWeight: 'bold'}}>{likesCounts}</div>
                         </div>
-
+                       {/* 
                         <div className={styles.date}>
                             {data.post.taken_at}
                         </div>
+                        */
+                        }
                     </div>
+    
 
 
 
@@ -97,5 +100,5 @@ export default function PostDetails() {
                 </main>
             </>
         )
-    }
+    // }
 }
